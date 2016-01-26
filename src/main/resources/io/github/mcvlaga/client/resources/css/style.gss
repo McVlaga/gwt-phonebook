@@ -1,0 +1,45 @@
+@external "*";
+
+.flex-table-border td {
+    border: 1px solid #BBBBBB;
+    min-width: 195px;
+}
+
+.flex-table-last-column-no-border td:last-child,
+.tools-panel-no-border td {
+     border: 0;
+     min-width: 0;
+}
+
+.tools td {
+     border: 0;
+     min-width: 0;
+ }
+
+.error-label-red {
+    color: #F00;
+    margin-bottom: 16px;
+}
+
+.success-label-green {
+    color: #009900;
+    margin-bottom: 16px;
+}
+
+.inline {
+    display: inline;
+}
+
+.phone-number-margin {
+    margin-top: 16px;
+}
+
+.big-font {
+    font-size: 2em;
+
+}
+
+.gwt-Anchor {color:#0000FF;}
+.gwt-Anchor:visited {color:#00FF00;}
+.gwt-Anchor:hover {color:#FF00FF;}
+.gwt-Anchor:active {color:#FF0000;}
