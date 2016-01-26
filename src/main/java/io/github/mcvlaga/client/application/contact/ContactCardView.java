@@ -108,7 +108,7 @@ public class ContactCardView extends ViewWithUiHandlers<ContactCardUiHandlers> i
 
         // Если введенные данные теже, то просто убираем редактирование этого ряда.
         if (newName.equals(nameTextBox.getName()) && newNumber.equals(numberTextBox.getName())) {
-            setContactDetails(newName, newNumber);
+            changeContactDetails(newName, newNumber);
             return;
         }
 
@@ -126,7 +126,7 @@ public class ContactCardView extends ViewWithUiHandlers<ContactCardUiHandlers> i
     /**
      * Обновляет UI новыми данными и убирает редактирование.
      */
-    private void setContactDetails (String name, String number) {
+    private void changeContactDetails (String name, String number) {
 
         // Добавляем новое имя.
         nameTextBox.removeFromParent();
@@ -161,7 +161,7 @@ public class ContactCardView extends ViewWithUiHandlers<ContactCardUiHandlers> i
         if (isEditing) {
 
             // ...обновляем имя и номер, и выключаем редактирование.
-            setContactDetails(contact.getName(), contact.getNumber());
+            changeContactDetails(contact.getName(), contact.getNumber());
 
             // Добавляем новое имя контакта в URL.
             PlaceRequest changedNameRequest = new PlaceRequest.Builder()
@@ -171,12 +171,11 @@ public class ContactCardView extends ViewWithUiHandlers<ContactCardUiHandlers> i
 
             placeManager.updateHistory(changedNameRequest, true);
         }
-        else {
-            messageLabel.setVisible(false);
-            contactDetails.setVisible(true);
-            nameLabel.setText(contact.getName());
-            numberLabel.setText(contact.getNumber());
-        }
+
+        messageLabel.setVisible(false);
+        contactDetails.setVisible(true);
+        nameLabel.setText(contact.getName());
+        numberLabel.setText(contact.getNumber());
     }
 
     @Override

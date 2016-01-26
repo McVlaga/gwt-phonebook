@@ -102,6 +102,7 @@ public class ContactCardPresenter extends Presenter<ContactCardPresenter.MyView,
         super.onReset();
 
         getView().setMessage("Loading...");
+        getView().setSuccessMessage("");
 
         // Отправляет виду предыдущую ссылку для возможности возвращения назад.
         getView().setBackLinkHistoryToken(placeManager.buildRelativeHistoryToken(-1));
